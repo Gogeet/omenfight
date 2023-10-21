@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SWTOR Combat Simulator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script defer src="scripts/player_1.js"></script>
+    <script defer src="scripts/player_2.js"></script>
+    <script defer src="scripts/script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="column"> <!-- Left Column -->
+            <div class="stats_1">
+                <span>HP: </span>
+                <span id="HP_1"></span>
+                <span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+                <span class="DE_1">DEF: </span>
+                <span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+                <span class="RE_1">RES: </span>
+                <span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+                <span class="IN_1">INI: </span>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div id="illegal_1">
+                <p id="illegal_reasons">Illegal character</p>
+                <ul id="reasons_list">
+                  <li id="illegal_points_1">You have used too many skills points for you Rank+Level!</li>
+                  <li id="illegal_powers_1">You have selected too many Force powers for your Rank+Level!</li>
+                  <li id="illegal_powrank_1">You have selected illegal Force powers for your Rank+Level!</li>
+                  <li id="illegal_profs_1">You have selected too many Profficiencies for your Rank+Level!</li>
+                  <li id="illegal_saber_1">You have selected too many Saber Forms for your Rank+Level!</li>
+                  <li id="illegal_heavy_1">Your armour is too heavy for your STR!</li>
+                </ul>
+                <br />
+            </div>
+
+            <div class="input-row-1">
+                <label for="str_1">STR:</label>
+                <input type="number" id="str_1" min="8" max="20" value="8">
+
+                <label for="dex_1">DEX:</label>
+                <input type="number" id="dex_1" min="8" max="20" value="8">
+
+                <label for="con_1">CON:</label>
+                <input type="number" id="con_1" min="8" max="20" value="8">
+
+                <label for="wil_1">WIL:</label>
+                <input type="number" id="wil_1" min="8" max="20" value="8">
+
+                <label for="cha_1">CHA:</label>
+                <input type="number" id="cha_1" min="8" max="20" value="8">
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div class="input-row">
+                <label for="rank_1">Rank:</label>
+                <select id="rank_1">
+                    <option value="aco">Acolyte</option>
+                    <option value="neo">Neophyte</option>
+                    <option value="app">Apprentice</option>
+                    <option value="lor">Lord</option>
+                    <option value="dar">Darth</option>
+                </select>
+
+                <label for="level_1">Level:</label>
+                <select id="level_1"></select>
+
+                <label for="species_1">Species:</label>
+                <select id="species_1">
+                    <option value="0">Human</option>
+                    <option value="1">Cathar</option>
+                    <option value="2">Chiss</option>
+                    <option value="3">Cyborg</option>
+                    <option value="4">Echani</option>
+                    <option value="5">Miraluka</option>
+                    <option value="6">Mirialan</option>
+                    <option value="7">Rattataki</option>
+                    <option value="8">Sith Pureblood</option>
+                    <option value="9">Togruta</option>
+                    <option value="10">Twi'lek</option>
+                    <option value="11">Zabrak</option>
+                </select>
+            </div>
+
+            <br />
+            <hr />
+            <div class ="species_bonus_ 1">
+                <ul class="bonuses_1_stats">
+                    <li id="str_bonus1_li">
+                        <input type="radio" id="str_bonus1" name="bonus_1_st" value="str_bonus1">
+                        <label for="lightsaber">+1 STR</label>
+                    </li>
+                    <li id="dex_bonus1_li">
+                        <input type="radio" id="dex_bonus1" name="bonus_1_st" value="dex_bonus1">
+                        <label for="saberstaff">+1 DEX</label>
+                    </li>
+                    <li id="con_bonus1_li">
+                        <input type="radio" id="con_bonus1" name="bonus_1_st" value="con_bonus1">
+                        <label for="dualwield">+1 CON</label>
+                    </li>
+                    <li id="wil_bonus1_li">
+                        <input type="radio" id="int_bonus1" name="bonus_1_st" value="int_bonus1">
+                        <label for="practicefoil">+1 INT</label>
+                    </li>
+                    <li id="int_bonus1_li">
+                        <input type="radio" id="wil_bonus1" name="bonus_1_st" value="wil_bonus1">
+                        <label for="practicestaff">+1 WIL</label>
+                    </li>
+                    <li id="cha_bonus1_li">
+                        <input type="radio" id="cha_bonus1" name="bonus_1_st" value="cha_bonus1">
+                        <label for="practicedualwield">+1 CHA</label>
+                    </li>
+                    <li id="pow_bonus1_li">
+                        <input type="radio" id="pow_bonus1" name="bonus_1_st" value="pow_bonus1">
+                        <label for="practicefoil">+1 Force Power</label>
+                    </li>
+                </ul>
+                <ul class="bonuses_1_prof">
+                    <li id="pro_bonus1_li">
+                        <input type="radio" id="pro_bonus1" name="bonus_1_pr" value="pro_bonus1">
+                        <label for="dualwield">+1 Prof</label>
+                    </li>
+                </ul>
+            </div>
+
+            <hr />
+            <br />
+
+            <div class="weapon_1">
+                <label for="weapon_options">Weapon:</label>
+                <ul id="weapon_options">
+                    <li>
+                        <input type="radio" id="lightsaber" name="weapon" value="lightsaber">
+                        <label for="lightsaber">Lightsaber</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="saberstaff" name="weapon" value="saberstaff">
+                        <label for="saberstaff">Saberstaff</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="dualwield" name="weapon" value="dualwield">
+                        <label for="dualwield">Dual Wield</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="practicefoil" name="weapon" value="practicefoil">
+                        <label for="practicefoil">Practice Foil</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="practicestaff" name="weapon" value="practicestaff">
+                        <label for="practicestaff">Practice Staff</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="practicedualwield" name="weapon" value="practicedualwield">
+                        <label for="practicedualwield">Practice Dual Wield</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="menuOption" name="weapon" value="menu">
+                        <label for="menuOption">Other&nbsp;</label>
+                        <select id="weapon_menu">
+                            <option value="vibroblade">Vibroblade</option>
+                            <option value="unarmed">Unarmed</option>
+                            <option value="other_weapons">Other Weapons</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div class="armour_1">
+                <label for="armour_options">Armor:</label>
+                <select id="armour_options">
+                    <option value="robes">Robes</option>
+                    <option value="combat_suit_light">Combat Suit (Light)</option>
+                    <option value="duranium_combat_suit_light">Duranium Combat Suit (Light)</option>
+                    <option value="composite_armour_medium">Composite Armour (Medium)</option>
+                    <option value="weave_armour_medium">Weave Armour (Medium)</option>
+                    <option value="assault_armour_heavy">Assault Armour (Heavy)</option>
+                    <option value="battle_armour_heavy">Battle Armour (Heavy)</option>
+                    <option value="durafiber_battle_armour_heavy">Durafiber Battle Armour (Heavy)</option>
+                </select>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div class="forms_1">
+
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div class="powers_1">
+                <div>Force powers chosen: <span id="chosen_powers_1"></span> / <span id="available_powers_1"></span></div>
+                <button id="popup-open-1">Select Force powers</button>
+
+                <div id="popup-1" class="popup-overlay">
+                    <div class="popup-content">
+                        <span class="popup-close" id="popup-close-1">&times;</span>
+                        <h3>Force Powers</h3>
+                        <div class="popup-columns">
+                            <div class="popup-column">
+                                <h4>Control</h4>
+                                <ul class="popup-control">
+                                    <li>
+                                        <input type="checkbox" id="detoxifyPoison" name="power_user_1" value="detoxifyPoison">
+                                        <label for="detoxifyPoison">Detoxify Poison</label><br>    
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="forceSpeed" name="power_user_1" value="forceSpeed">
+                                        <label for="forceSpeed">Force Speed</label><br>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="forceConcealment" name="power_user_1" value="forceConcealment">
+                                        <label for="forceConcealment">Force Concealment</label><br>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="forceOfWill" name="power_user_1" value="forceOfWill">
+                                        <label for="forceOfWill">Force of Will</label><br>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="popup-column">
+                                <h4>Sense</h4>
+                                <ul class="popup-sense">
+                                    <li>
+                                        <input type="checkbox" id="battlePrecognition" name="power_user_1" value="battlePrecognition">
+                                        <label for="battlePrecognition">Battle Precognition</label><br>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="forceEmpathy" name="power_user_1" value="forceEmpathy">
+                                        <label for="forceEmpathy">Force Empathy</label><br>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="telepathy" name="power_user_1" value="telepathy">
+                                        <label for="telepathy">Telepathy</label><br>
+                                    </li>
+                                </ul>
+                            </div>
+                         
+                            <div class="popup-column">
+                                <h4>Alter</h4>
+                                <div class="popup-alter">
+                                    <ul>
+                                        <li>
+                                            <input type="checkbox" id="forcePullPush" name="power_user_1" value="forcePullPush">
+                                            <label for="forcePullPush">Force Pull & Push</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="forceWave" name="power_user_1" value="forceWave">
+                                            <label for="forceWave">Force Wave</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="forceGrip" name="power_user_1" value="forceGrip">
+                                            <label for="forceGrip">Force Grip</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="forceWhirlwind" name="power_user_1" value="forceWhirlwind">
+                                            <label for="forceWhirlwind">Force Whirlwind</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="saberThrow" name="power_user_1" value="saberThrow">
+                                            <label for="saberThrow">Saber Throw</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="mindShard" name="power_user_1" value="mindShard">
+                                            <label for="mindShard">Mind Shard</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="mindTrick" name="power_user_1" value="mindTrick">
+                                            <label for="mindTrick">Mind Trick</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="drainKnowledge" name="power_user_1" value="drainKnowledge">
+                                            <label for="drainKnowledge">Drain Knowledge</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="forceFear" name="power_user_1" value="forceFear">
+                                            <label for="forceFear">Force Fear</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="forceSlow" name="power_user_1" value="forceSlow">
+                                            <label for="forceSlow">Force Slow</label><br>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <input type="checkbox" id="forceStun" name="power_user_1" value="forceStun">
+                                            <label for="forceStun">Force Stun</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="forceStasis" name="power_user_1" value="forceStasis">
+                                            <label for="forceStasis">Force Stasis</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="stasisField" name="power_user_1" value="stasisField">
+                                            <label for="stasisField">Stasis Field</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="forceChoke" name="power_user_1" value="forceChoke">
+                                            <label for="forceChoke">Force Choke</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="forceWound" name="power_user_1" value="forceWound">
+                                            <label for="forceWound">Force Wound</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="forceCrush" name="power_user_1" value="forceCrush">
+                                            <label for="forceCrush">Force Crush</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="forceRend" name="power_user_1" value="forceRend">
+                                            <label for="forceRend">Force Rend</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="forceShock" name="power_user_1" value="forceShock">
+                                            <label for="forceShock">Force Shock</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="forceLightning" name="power_user_1" value="forceLightning">
+                                            <label for="forceLightning">Force Lightning</label><br>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" id="chainLightning" name="power_user_1" value="chainLightning">
+                                            <label for="chainLightning">Chain Lightning</label><br>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="popup-column">
+                                <h4>Basic</h4>
+                                <ul class="popup-basic">
+                                    <li>
+                                        <input type="checkbox" id="telekinesis" name="telekinesis" value="telekinesis">
+                                        <label for="telekinesis">Telekinesis</label><br>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="thoughtShield" name="thoughtShield" value="thoughtShield">
+                                        <label for="thoughtShield">Thought Shield</label><br>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="forceShield" name="forceShield" value="forceShield">
+                                        <label for="forceShield">Force Shield</label><br>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="tapas" name="tapas" value="tapas">
+                                        <label for="tapas">Tapas</label><br>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="tutaminis" name="tutaminis" value="tutaminis">
+                                        <label for="tutaminis">Tutaminis</label><br>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="precognition" name="precognition" value="precognition">
+                                        <label for="precognition">Precognition</label><br>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="forceAugmentation" name="forceAugmentation" value="forceAugmentation">
+                                        <label for="forceAugmentation">Force Augmentation</label><br>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="popup-column">
+                                <h4>Affinities</h4>
+                                <ul class="popup-affinities">
+                                    <li>
+                                        <input type="checkbox" id="cryokinesis" name="power_user_1" value="cryokinesis">
+                                        <label for="cryokinesis">Cryokinesis</label><br>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="pyrokinesis" name="power_user_1" value="pyrokinesis">
+                                        <label for="pyrokinesis">Pyrokinesis</label><br>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="forceCloak" name="power_user_1" value="forceCloak">
+                                        <label for="forceCloak">Force Cloak</label><br>
+                                    </li>
+                                </ul>    
+                            </div>
+                        </div>                        
+                    </div>
+                </div>                  
+            </div>
+
+
+        </div>
+
+        <div class="central-column"> <!-- Central Column -->
+            <!-- Content for the central column goes here -->
+        </div>
+
+        <div class="column right-column">
+            <div class="stats_2">
+                <span class="HP_2">HP: </span>
+                <span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+                <span class="DE_2">DEF: </span>
+                <span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+                <span class="RE_2">RES: </span>
+                <span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+                <span class="IN_2">INI: </span>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div id="illegal_2" >
+                <p>Illegal character </p><br />
+            </div>
+
+            <div class="input-row">
+                <label for="str_2">STR:</label>
+                <input type="number" id="str_2">
+
+                <label for="dex_2">DEX:</label>
+                <input type="number" id="dex_2">
+
+                <label for="con_2">CON:</label>
+                <input type="number" id="con_2">
+
+                <label for="wil_2">WIL:</label>
+                <input type="number" id="wil_2">
+
+                <label for="cha_2">CHA:</label>
+                <input type="number" id="cha_2">
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div class="input-row">
+                <label for="rank_2">Rank:</label>
+                <select id="rank_2">
+                    <option value="aco">Acolyte</option>
+                    <option value="neo">Neophyte</option>
+                    <option value="app">Apprentice</option>
+                    <option value="lor">Lord</option>
+                    <option value="dar">Darth</option>
+                </select>
+
+                <label for="level_2">Level:</label>
+                <select id="level_2">
+                </select>
+
+                <label for="species_2">Species:</label>
+                <select id="species_2">
+                    <option value="human">Human</option>
+                    <option value="cathar">Cathar</option>
+                    <option value="chiss">Chiss</option>
+                    <option value="echani">Echani</option>
+                    <option value="miraluka">Miraluka</option>
+                    <option value="mirialan">Mirialan</option>
+                    <option value="rattataki">Rattataki</option>
+                    <option value="pb">Sith Pureblood</option>
+                    <option value="togruta">Togruta</option>
+                    <option value="twiki">Twi'lek</option>
+                    <option value="zabrak">Zabrak</option>
+                </select>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div class="weapon_2">
+                <label for="weapon_options">Weapon:</label>
+                <ul id="weapon_options">
+                    <li>
+                        <input type="radio" id="lightsaber" name="weapon" value="lightsaber">
+                        <label for="lightsaber">Lightsaber</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="saberstaff" name="weapon" value="saberstaff">
+                        <label for="saberstaff">Saberstaff</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="dualwield" name="weapon" value="dualwield">
+                        <label for="dualwield">Dual Wield</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="practicefoil" name="weapon" value="practicefoil">
+                        <label for="practicefoil">Practice Foil</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="practicestaff" name="weapon" value="practicestaff">
+                        <label for="practicestaff">Practice Staff</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="practicedualwield" name="weapon" value="practicedualwield">
+                        <label for="practicedualwield">Practice Dual Wield</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="menuOption" name="weapon" value="menu">
+                        <label for="menuOption">Other&nbsp;</label>
+                        <select id="weapon_menu">
+                            <option value="vibroblade">Vibroblade</option>
+                            <option value="unarmed">Unarmed</option>
+                            <option value="other_weapons">Other Weapons</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+
+            <br />
+            <hr />
+            <br />
+
+            <div class="armour_2">
+                <label for="armour_options">Armor:</label>
+                <select id="armour_options">
+                    <option value="robes">Robes</option>
+                    <option value="combat_suit_light">Combat Suit (Light)</option>
+                    <option value="duranium_combat_suit_light">Duranium Combat Suit (Light)</option>
+                    <option value="composite_armour_medium">Composite Armour (Medium)</option>
+                    <option value="weave_armour_medium">Weave Armour (Medium)</option>
+                    <option value="assault_armour_heavy">Assault Armour (Heavy)</option>
+                    <option value="battle_armour_heavy">Battle Armour (Heavy)</option>
+                    <option value="durafiber_battle_armour_heavy">Durafiber Battle Armour (Heavy)</option>
+                </select>
+            </div>
+                </select>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,203 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 10% 1fr;
+}
+
+.column {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.weapon_1,
+.weapon_2 {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.weapon_1 ul,
+.weapon_2 ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.weapon_1 li,
+.weapon_2 li {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+.weapon_1 li label,
+.weapon_2 li label {
+  margin-left: 5px;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: none;
+}
+
+#illegal_1,
+#illegal_2 {
+  display: none;
+  color: red;
+  font-weight: bold;
+}
+
+.popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ebebeb;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 5px;
+  text-align: center;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.popup-content h3 {
+  display: block;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.popup-content h4 {
+  display: block;
+  margin-bottom: 0px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.popup-columns {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 2px;
+  margin-bottom: 5px;
+  text-align: center;
+  padding-inline-start: 0px;
+}
+
+.popup-column {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #ccc;
+  align-items: center;
+  text-align: center;
+}
+
+.popup-column:last-child {
+  border-right: none;
+}
+
+.popup-alter {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2px;
+}
+
+.popup-control label,
+.popup-sense label,
+.popup-alter label,
+.popup-basic label,
+.popup-affinities label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+body.popupOpen {
+  overflow: hidden;
+}
+
+.popup-control li,
+.popup-alter li,
+.popup-sense li,
+.popup-basic li,
+.popup-affinities li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+  text-align: center;
+  width: 100%;
+}
+
+.popup-alter ul,
+.popup-column ul{
+  width: 100%;
+  padding-inline-start: 0px;
+}
+
+.popup-alter {
+  padding: 10%;
+  padding-top: 0px;
+}
+
+.popup-control {
+  align-items: center;
+}
+
+#str_bonus1_li,
+#dex_bonus1_li,
+#con_bonus1_li,
+#int_bonus1_li,
+#wil_bonus1_li,
+#cha_bonus1_li,
+#pow_bonus1_li,
+#pro_bonus1_li {
+  display: none;
+}
+
+#reasons_list {
+  display: none;
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+#illegal_reasons:hover + #reasons_list {
+  display: block;
+}
+
+#illegal_points_1,
+#illegal_powers_1,
+#illegal_profs_1,
+#illegal_saber_1,
+#illegal_heavy_1
+#illegal_powrank_1 {
+  display: none;
+}
